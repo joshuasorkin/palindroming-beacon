@@ -119,3 +119,6 @@ dist
 
 # firebase private key
 chatabolic-firebase-adminsdk*.*
+
+# notes files
+*.notes

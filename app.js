@@ -25,16 +25,24 @@ const stream=new CommentStream(redditConfig,{
     results:25
 })
 const palindromeCharLowerLimit=6
-const prohibitedSubreddits=['palindrom','wordplay','logophilia','linguist','language']
+const prohibitedKeywords=['palindrom','wordplay','logophilia','linguist','language']
 
 //deleteAllComments()
 //return;
 
-function isProhibitedSubreddit(comment){
+
+function commentContainsProhibitedKeyword(comment){
     const subreddit=comment.subreddit.display_name.toLowerCase()
+    const body=comment.body.toLowerCase()
+
+    return containsProhibitedKeyword(subreddit)
+}
+
+function containsProhibitedKeyword(text){
+    //const subreddit=comment.subreddit.display_name.toLowerCase()
     let isProhibited=false
-    for(let i=0;i<prohibitedSubreddits.length;i++){
-        if(subreddit.includes(prohibitedSubreddits[i])){
+    for(let i=0;i<prohibitedKeywords.length;i++){
+        if(text.includes(prohibitedKeywords[i])){
             isProhibited=true;
             break;
         }
