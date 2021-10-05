@@ -25,7 +25,7 @@ const stream=new CommentStream(redditConfig,{
     results:25
 })
 const palindromeCharLowerLimit=6
-const prohibitedSubreddits=['palindrome','wordplay','logophilia','linguist','language']
+const prohibitedSubreddits=['palindrom','wordplay','logophilia','linguist','language']
 
 //deleteAllComments()
 //return;
